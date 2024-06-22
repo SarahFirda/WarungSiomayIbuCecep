@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.modal {
+    transition: transform 0.3s ease;
+    transform: translateY(100%);
+}
+
+.modal.open {
+    transform: translateY(0%);
+    transition: transform 0.3s ease;
+}
+
+/** rating **/
+div.stars {
+    display: inline-block;
+}
+
+input.star {
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 4px;
+    font-size: 20px;
+    color: #444;
+    transition: all 0.2s;
+}
+
+input.star:checked ~ label.star:before {
+    content: "\f005";
+    color: rgb(184, 184, 1);
+    transition: all 0.25s;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+input.star-5:checked ~ label.star:before {
+    color: rgb(184, 184, 1);
+}
+
+input.star-1:checked ~ label.star:before {
+    color: rgb(184, 184, 1);
+}
+
+label.star:before {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 200;
+}
+
+.horline > li:not(:last-child):after {
+    content: " |";
+}
+.horline > li {
+    font-weight: bold;
+    color: #ff7e1a;
+}
+/** end rating **/
